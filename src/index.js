@@ -1,12 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React,{ useState } from 'react'
+import ReactDOM from 'react-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const App = () => {
+  const [item, setItem] = useState(1)
+  const incrementItem = () => setItem(item + 1)
+  const decrementItem = () => setItem(item - 1)
+  return (
+    <div>
+      <h1>Hello {item}</h1>
+      <h2>Start editing to see some magic happen!</h2>
+      <button onClick={incrementItem}>Increment</button>
+      <button onClick={decrementItem}>Decrement</button>
+    </div>
+  )
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+  <App />,
+  document.querySelector('#root')
+)
