@@ -4,6 +4,7 @@ import PracticeUseState from './PracticeUseState'
 import PracticeUseInput from './PracticeUseInput'
 
 const App = () => {
+  console.log('1')
   return (
     <div className="App">
       {/* <PracticeUseState /> */}
